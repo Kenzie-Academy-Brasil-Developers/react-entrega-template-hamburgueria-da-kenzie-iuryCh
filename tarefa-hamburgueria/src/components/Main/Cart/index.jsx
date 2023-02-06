@@ -1,8 +1,9 @@
 import { StyledCart, StyledEmptyCart } from "./style.js";
+import Card from "./Card";
+import TotalCart from "./TotalCart";
 
-function Cart({ props }) {
-  if (true) {
-    console.log("é true");
+function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
+  if (currentSale.length == 0) {
     return (
       <StyledEmptyCart>
         <div className="box_title">
@@ -17,15 +18,25 @@ function Cart({ props }) {
   } else {
     return (
       <StyledCart>
-        <div>
+        <div className="box_title">
           <h2>Carrinho de Compras</h2>
         </div>
-        <div>
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-        <div></div>
+        <ul className="box_content--container">
+          {currentSale.map((current) => (
+            <Card
+              key={current.id}
+              currentSale={currentSale}
+              current={current}
+              setCurrentSale={setCurrentSale}
+            />
+          ))}
+        </ul>
+        <TotalCart
+          currentSale={currentSale}
+          setCurrentSale={setCurrentSale}
+          cartTotal={cartTotal}
+          setCartTotal={setCartTotal}
+        />
       </StyledCart>
     );
   }

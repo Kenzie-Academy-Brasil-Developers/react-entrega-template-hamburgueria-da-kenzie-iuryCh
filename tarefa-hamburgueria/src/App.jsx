@@ -7,10 +7,11 @@ import api from "./services/api.js";
 
 function App() {
   const [products, setProducts] = useState([]);
-
+  const [currentSale, setCurrentSale] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
   // onMount
   useEffect(() => {
-    async function showProducts() {
+    async function getAllProducts() {
       try {
         const response = await api.get("products");
         setProducts(response.data);
@@ -18,13 +19,19 @@ function App() {
         console.log(error);
       }
     }
-    showProducts();
+    getAllProducts();
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <Main products={products} />
+      <Main
+        products={products}
+        currentSale={currentSale}
+        setCurrentSale={setCurrentSale}
+        cartTotal={cartTotal}
+        setCartTotal={setCartTotal}
+      />
 
       <ToastContainer
         position="top-center"

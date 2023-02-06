@@ -50,5 +50,17 @@ const StyledList = styled.li`
       color: var(--Color-primary);
     }
   }
+  @media (min-width: 1020px) {
+    min-width: 200px;
+    height: 250px;
+
+    .box_img {
+      min-width: 50px;
+      height: 100px;
+    }
+    .box_content{
+      gap: 15px;
+    }
+  }
 `;
 export default StyledList;

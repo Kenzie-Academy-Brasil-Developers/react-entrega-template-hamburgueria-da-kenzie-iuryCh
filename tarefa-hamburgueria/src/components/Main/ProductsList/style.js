@@ -15,6 +15,14 @@ const StyledProductList = styled.ul`
   ::-webkit-scrollbar {
     width: 0px;
   }
+
+  @media (min-width: 1020px) {
+    margin-top: 0;
+    width: 55%;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export default StyledProductList;

@@ -1,7 +1,8 @@
 import Button from "./Button";
 import StyledList from "./style.js";
 
-function Product({ product }) {
+function Product({ products, currentSale, product, setCurrentSale }) {
+  
   return (
     <StyledList id={product.id}>
       <div className="box_img">
@@ -11,7 +12,12 @@ function Product({ product }) {
         <h2>{product.name}</h2>
         <p>{product.category}</p>
         <span>R${product.price.toFixed(2)}</span>
-        <Button />
+        <Button
+          products={products}
+          currentSale={currentSale}
+          product={product}
+          setCurrentSale={setCurrentSale}
+        />
       </div>
     </StyledList>
   );
