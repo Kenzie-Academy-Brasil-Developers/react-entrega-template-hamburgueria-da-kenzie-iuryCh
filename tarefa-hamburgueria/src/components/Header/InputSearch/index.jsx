@@ -1,6 +1,6 @@
 import StyledInputSearch from "./style.js";
 
-function InputSearch() {
+function InputSearch({setFilteredProducts}) {
   return (
     <StyledInputSearch>
       <input
@@ -8,7 +8,7 @@ function InputSearch() {
         type="text"
         placeholder="Digitar pesquisa"
       />
-      <button className="box_search--button">Pesquisar</button>
+      <button type="submit" className="box_search--button">Pesquisar</button>
     </StyledInputSearch>
   );
 }

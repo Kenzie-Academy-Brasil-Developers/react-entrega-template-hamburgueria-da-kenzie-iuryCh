@@ -13,7 +13,7 @@ function Product({ products, currentSale, product, setCurrentSale }) {
         <p>{product.category}</p>
         <span>R${product.price.toFixed(2)}</span>
         <Button
-          products={products}
+          
           currentSale={currentSale}
           product={product}
           setCurrentSale={setCurrentSale}

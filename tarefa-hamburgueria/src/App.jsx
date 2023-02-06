@@ -6,9 +6,13 @@ import { useState, useEffect } from "react";
 import api from "./services/api.js";
 
 function App() {
+  const localCurrentSale = localStorage.getItem("@currentSale");
   const [products, setProducts] = useState([]);
-  const [currentSale, setCurrentSale] = useState([]);
+  const [currentSale, setCurrentSale] = useState(
+    localCurrentSale ? JSON.parse(localCurrentSale) : []
+  );
   const [cartTotal, setCartTotal] = useState(0);
+  const [filteredProducts, setFilteredProducts] = useState([""]);
   // onMount
   useEffect(() => {
     async function getAllProducts() {
@@ -22,9 +26,14 @@ function App() {
     getAllProducts();
   }, []);
 
+  // on upDate
+  useEffect(() => {
+    localStorage.setItem("@currentSale", JSON.stringify(currentSale));
+  }, [currentSale]);
+
   return (
     <div className="App">
-      <Header />
+      <Header setFilteredProducts={setFilteredProducts} />
       <Main
         products={products}
         currentSale={currentSale}

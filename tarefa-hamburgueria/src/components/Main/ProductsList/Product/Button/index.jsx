@@ -1,16 +1,18 @@
 import StyledButton from "./style.js";
 
-function Button({ products, currentSale, product, setCurrentSale }) {
+function Button({ currentSale, product, setCurrentSale }) {
   function handleClick(id) {
-    const productFound = products.find((element) => element.id == id);
+
     if (currentSale.length == 0) {
-      setCurrentSale([...currentSale, productFound]);
+      setCurrentSale([product]);
     } else if (currentSale.length > 0) {
       const productIds = currentSale.map((element) => element.id);
-      if (productIds.some((product) => product === id)) {
-        setCurrentSale([...currentSale, productFound]);
+      
+      if (!productIds.some((product) => product == id)) {
+        setCurrentSale([...currentSale, product]);
       }
     }
+    return product;
   }
   return (
     <StyledButton

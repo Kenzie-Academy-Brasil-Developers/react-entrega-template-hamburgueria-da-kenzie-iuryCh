@@ -1,6 +1,7 @@
 import { StyledCart, StyledEmptyCart } from "./style.js";
 import Card from "./Card";
 import TotalCart from "./TotalCart";
+import { v4 as uuid } from "uuid";
 
 function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
   if (currentSale.length == 0) {
@@ -22,14 +23,16 @@ function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
           <h2>Carrinho de Compras</h2>
         </div>
         <ul className="box_content--container">
-          {currentSale.map((current) => (
-            <Card
-              key={current.id}
-              currentSale={currentSale}
-              current={current}
-              setCurrentSale={setCurrentSale}
-            />
-          ))}
+          {currentSale.map((current) => {
+            return (
+              <Card
+                key={uuid()}
+                currentSale={currentSale}
+                current={current}
+                setCurrentSale={setCurrentSale}
+              />
+            );
+          })}
         </ul>
         <TotalCart
           currentSale={currentSale}

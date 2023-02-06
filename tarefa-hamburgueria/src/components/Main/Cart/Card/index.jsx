@@ -1,10 +1,12 @@
 import StyledListCard from "./style.js";
-function Card({ current, setCurrentSale, currentSale, removeCard }) {
+function Card({ current, setCurrentSale, currentSale }) {
   function removeCard(id) {
-    const filterdCards = currentSale.filter((element) => element.id === id);
-
-    return setCurrentSale([filterdCards]);
+    const filteredCards = currentSale.filter((element) => {
+      return +element.id !== +id;
+    });
+    setCurrentSale(filteredCards);
   }
+
   return (
     <StyledListCard id={current.id}>
       <div className="box_imagem">

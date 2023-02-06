@@ -1,7 +1,6 @@
 import StyledMain from "./style.js";
 import ProductList from "./ProductsList";
 import Cart from "./Cart";
-import { useState } from "react";
 
 function Main({
   products,
