@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import api from "./services/api.js";
+import StyledApp from "./styles/App.js";
 
 function App() {
   const localCurrentSale = localStorage.getItem("@currentSale");
@@ -12,7 +13,8 @@ function App() {
     localCurrentSale ? JSON.parse(localCurrentSale) : []
   );
   const [cartTotal, setCartTotal] = useState(0);
-  const [filteredProducts, setFilteredProducts] = useState([""]);
+  const [filteredProducts, setFilteredProducts] = useState("");
+  const [search, setSearch] = useState("");
   // onMount
   useEffect(() => {
     async function getAllProducts() {
@@ -33,7 +35,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header setFilteredProducts={setFilteredProducts} />
+      <Header
+        search={search}
+        products={products}
+        setSearch={setSearch}
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
+      />
+      {search && (
+        <StyledApp className="box_searched">
+          <p>Resultados para: <span >{search}</span></p>
+          <button onClick={() => setSearch("")}>Limpar Busca</button>
+        </StyledApp>
+      )}
       <Main
         products={products}
         currentSale={currentSale}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledInputSearch = styled.div`
+const StyledInputSearch = styled.form`
   position: relative;
   background-color: white;
   border-radius: var(--standard-radius);
