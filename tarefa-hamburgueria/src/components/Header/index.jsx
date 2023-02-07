@@ -3,6 +3,7 @@ import StyledHeader from "./style.js";
 import InputSearch from "./InputSearch";
 
 function Header({
+  setNewFilterProducts,
   products,
   search,
   filteredProducts,
@@ -15,6 +16,7 @@ function Header({
         <img src={burguerKenzie} alt="logo" />
       </div>
       <InputSearch
+        setNewFilterProducts={setNewFilterProducts}
         search={search}
         products={products}
         setSearch={setSearch}

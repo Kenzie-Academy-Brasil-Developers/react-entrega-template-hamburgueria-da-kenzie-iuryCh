@@ -3,6 +3,7 @@ import ProductList from "./ProductsList";
 import Cart from "./Cart";
 
 function Main({
+  newFilterProducts,
   products,
   currentSale,
   setCurrentSale,
@@ -12,6 +13,7 @@ function Main({
   return (
     <StyledMain>
       <ProductList
+        newFilterProducts={newFilterProducts}
         products={products}
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}

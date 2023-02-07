@@ -52,7 +52,7 @@ export const StyledEmptyCart = styled.div`
 export const StyledCart = styled.div`
   height: auto;
 
-  min-width: 80%;
+  width: 95%;
   padding-right: 4%;
 
   .box_title {
@@ -83,6 +83,6 @@ export const StyledCart = styled.div`
     gap: 10px;
   }
   @media (min-width: 1020px) {
-    max-width: 45%;
+    width: 400px;
   }
 `;

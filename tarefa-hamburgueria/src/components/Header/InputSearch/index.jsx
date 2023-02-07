@@ -1,6 +1,7 @@
 import StyledInputSearch from "./style.js";
 
 function InputSearch({
+  setNewFilterProducts,
   products,
   setSearch,
   filteredProducts,
@@ -15,7 +16,10 @@ function InputSearch({
         ? true
         : product.name.toLowerCase().includes(filteredProducts.toLowerCase());
     });
+    
+    setNewFilterProducts(productsFiltered);
   }
+
   return (
     <StyledInputSearch onSubmit={showProducts}>
       <input

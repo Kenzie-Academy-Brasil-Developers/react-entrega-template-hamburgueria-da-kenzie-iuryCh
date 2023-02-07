@@ -15,6 +15,7 @@ function App() {
   const [cartTotal, setCartTotal] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState("");
   const [search, setSearch] = useState("");
+  const [newFilterProducts, setNewFilterProducts] = useState([]);
   // onMount
   useEffect(() => {
     async function getAllProducts() {
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header
+        setNewFilterProducts={setNewFilterProducts}
         search={search}
         products={products}
         setSearch={setSearch}
@@ -44,11 +46,21 @@ function App() {
       />
       {search && (
         <StyledApp className="box_searched">
-          <p>Resultados para: <span >{search}</span></p>
-          <button onClick={() => setSearch("")}>Limpar Busca</button>
+          <p>
+            Resultados para: <span>{search}</span>
+          </p>
+          <button
+            onClick={() => {
+              setNewFilterProducts([]);
+              setSearch("");
+            }}
+          >
+            Limpar Busca
+          </button>
         </StyledApp>
       )}
       <Main
+        newFilterProducts={newFilterProducts}
         products={products}
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}
