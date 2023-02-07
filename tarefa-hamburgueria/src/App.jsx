@@ -22,6 +22,7 @@ function App() {
       try {
         const response = await api.get("products");
         setProducts(response.data);
+        setNewFilterProducts(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -51,7 +52,7 @@ function App() {
           </p>
           <button
             onClick={() => {
-              setNewFilterProducts([]);
+              setNewFilterProducts(products);
               setSearch("");
             }}
           >
