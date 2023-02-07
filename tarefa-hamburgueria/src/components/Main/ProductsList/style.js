@@ -22,7 +22,7 @@ const StyledProductList = styled.ul`
 
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
   }
 `;
