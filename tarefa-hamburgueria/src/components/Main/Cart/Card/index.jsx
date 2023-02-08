@@ -1,4 +1,5 @@
 import StyledListCard from "./style.js";
+
 function Card({ current, setCurrentSale, currentSale }) {
   function removeCard(id) {
     const filteredCards = currentSale.filter((element) => {

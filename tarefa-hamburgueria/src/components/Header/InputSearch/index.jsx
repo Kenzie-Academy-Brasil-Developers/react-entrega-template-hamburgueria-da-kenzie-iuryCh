@@ -16,7 +16,11 @@ function InputSearch({
     const productsFiltered = products.filter((product) => {
       return filteredProducts === ""
         ? true
-        : product.name.toLowerCase().includes(filteredProducts.toLowerCase());
+        : product.name.toLowerCase().includes(filteredProducts.toLowerCase())
+        ? null
+        : product.category
+            .toLowerCase()
+            .includes(filteredProducts.toLowerCase());
     });
 
     setNewFilterProducts(productsFiltered);
@@ -34,9 +38,7 @@ function InputSearch({
         type="text"
         placeholder="Digitar pesquisa"
       />
-      <button type="submit" className="box_search--button">
-        Pesquisar
-      </button>
+      <button className="box_search--button">Pesquisar</button>
     </StyledInputSearch>
   );
 }

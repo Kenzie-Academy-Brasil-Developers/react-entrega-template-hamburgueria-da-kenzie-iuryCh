@@ -2,14 +2,7 @@ import StyledMain from "./style.js";
 import ProductList from "./ProductsList";
 import Cart from "./Cart";
 
-function Main({
-  newFilterProducts,
-  products,
-  currentSale,
-  setCurrentSale,
-  cartTotal,
-  setCartTotal,
-}) {
+function Main({ newFilterProducts, products, currentSale, setCurrentSale }) {
   return (
     <StyledMain>
       <ProductList
@@ -18,12 +11,7 @@ function Main({
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}
       />
-      <Cart
-        currentSale={currentSale}
-        setCurrentSale={setCurrentSale}
-        cartTotal={cartTotal}
-        setCartTotal={setCartTotal}
-      />
+      <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
     </StyledMain>
   );
 }

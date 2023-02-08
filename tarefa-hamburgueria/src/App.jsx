@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import api from "./services/api.js";
 import StyledApp from "./styles/App.js";
@@ -12,7 +12,6 @@ function App() {
   const [currentSale, setCurrentSale] = useState(
     localCurrentSale ? JSON.parse(localCurrentSale) : []
   );
-  const [cartTotal, setCartTotal] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState("");
   const [search, setSearch] = useState("");
   const [newFilterProducts, setNewFilterProducts] = useState([]);
@@ -21,6 +20,7 @@ function App() {
     async function getAllProducts() {
       try {
         const response = await api.get("products");
+
         setProducts(response.data);
         setNewFilterProducts(response.data);
       } catch (error) {
@@ -65,8 +65,6 @@ function App() {
         products={products}
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}
-        cartTotal={cartTotal}
-        setCartTotal={setCartTotal}
       />
 
       <ToastContainer
@@ -86,16 +84,3 @@ function App() {
 }
 
 export default App;
-
-// const warning = () => {
-//   toast.warning("Aviso");
-// };
-// const info = () => {
-//   toast.info("Informação");
-// };
-// const success = () => {
-//   toast.success("Sucesso");
-// };
-// const error = () => {
-//   toast.error("Erro");
-// };
