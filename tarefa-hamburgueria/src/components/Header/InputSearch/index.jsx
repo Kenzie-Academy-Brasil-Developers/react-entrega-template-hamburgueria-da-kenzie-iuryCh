@@ -17,7 +17,7 @@ function InputSearch({
       return filteredProducts === ""
         ? true
         : product.name.toLowerCase().includes(filteredProducts.toLowerCase())
-        ? null
+        ? true
         : product.category
             .toLowerCase()
             .includes(filteredProducts.toLowerCase());
