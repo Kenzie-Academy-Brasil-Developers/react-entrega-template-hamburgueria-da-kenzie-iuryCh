@@ -17,6 +17,12 @@ const StyledTotalCart = styled.div`
     span {
       font: var(--Body-14);
     }
+    p {
+      color: var(--grey-100);
+    }
+    span {
+      color: var(--grey-50);
+    }
   }
   .box_button {
     /* width: 100%;
