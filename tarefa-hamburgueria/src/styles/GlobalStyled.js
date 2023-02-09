@@ -21,14 +21,14 @@ export const GlobalStyles = createGlobalStyle`
         --grey-0: #F5F5F5;
 
         /* Typography */
-        --Heading-26: 700 1.625rem Inter, "sans-serif";
-        --Heading-22: 700 1.375rem Inter, "sans-serif";
-        --Heading-18: 700 1.125rem Inter, "sans-serif";
-        --Heading-14: 700 0.875rem Inter, "sans-serif";
-        --Headline-16: 400 1rem Inter, "sans-serif";
-        --Body-14: 400 0.875rem Inter, "sans-serif";
-        --Body-600: 600 0.875rem Inter, "sans-serif";
-        --Caption-12: 400 0.75rem Inter, "sans-serif";
+        --Heading-26: 700 1.625rem "Inter", sans-serif;
+        --Heading-22: 700 1.375rem "Inter", sans-serif;
+        --Heading-18: 700 1.125rem "Inter", sans-serif;
+        --Heading-14: 700 0.875rem "Inter", sans-serif;
+        --Headline-16: 400 1rem "Inter", sans-serif;
+        --Body-14: 400 0.875rem "Inter", sans-serif;
+        --Body-600: 600 0.875rem "Inter", sans-serif;
+        --Caption-12: 400 0.75rem "Inter", sans-serif;
 
         /* button */
         --standard-radius: 8px;

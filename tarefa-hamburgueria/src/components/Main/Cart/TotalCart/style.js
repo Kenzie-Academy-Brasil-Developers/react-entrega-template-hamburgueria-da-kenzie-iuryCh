@@ -13,6 +13,10 @@ const StyledTotalCart = styled.div`
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    p,
+    span {
+      font: var(--Body-14);
+    }
   }
   .box_button {
     /* width: 100%;
