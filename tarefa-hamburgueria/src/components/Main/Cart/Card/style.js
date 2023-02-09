@@ -4,9 +4,14 @@ const StyledListCard = styled.li`
   display: flex;
   justify-content: space-between;
 
+  .box_container {
+    display: flex;
+    gap: 10px;
+  }
+
   .box_imagem {
     height: 70px;
-    width: 70px;
+    min-width: 70px;
 
     background-color: var(--grey-0);
 
@@ -15,8 +20,8 @@ const StyledListCard = styled.li`
     justify-content: center;
 
     img {
-      height: 50%;
-      width: 50%;
+      height: 97%;
+      width: 83%;
     }
   }
   .box_content {
@@ -24,11 +29,13 @@ const StyledListCard = styled.li`
     flex-direction: column;
     gap: 15px;
 
-    margin-right: 85px;
     margin-top: 10px;
 
     h2 {
       font: var(--Heading-14);
+      max-height: 16px;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     p {

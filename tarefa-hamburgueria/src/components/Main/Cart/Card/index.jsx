@@ -10,12 +10,14 @@ function Card({ current, setCurrentSale, currentSale }) {
 
   return (
     <StyledListCard id={current.id}>
-      <div className="box_imagem">
-        <img src={current.img} alt={current.name} />
-      </div>
-      <div className="box_content">
-        <h2>{current.name}</h2>
-        <p>{current.category}</p>
+      <div className="box_container">
+        <div className="box_imagem">
+          <img src={current.img} alt={current.name} />
+        </div>
+        <div className="box_content">
+          <h2>{current.name}</h2>
+          <p>{current.category}</p>
+        </div>
       </div>
       <div className="box_button">
         <button
