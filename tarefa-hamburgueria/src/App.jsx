@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
-import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import api from "./services/api.js";
 import StyledApp from "./styles/App.js";

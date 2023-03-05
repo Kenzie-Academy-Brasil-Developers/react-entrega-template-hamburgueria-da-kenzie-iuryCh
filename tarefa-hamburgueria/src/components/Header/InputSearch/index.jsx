@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { toast } from "react-toastify";
-import StyledInputSearch from "./style.js";
+import { toast } from 'react-toastify';
+import StyledInputSearch from './style.js';
 
 function InputSearch({
   setNewFilterProducts,
@@ -10,11 +9,12 @@ function InputSearch({
   setFilteredProducts,
 }) {
   function showProducts(event) {
+    console.log(filteredProducts);
     event.preventDefault();
     setSearch(filteredProducts);
 
     const productsFiltered = products.filter((product) => {
-      return filteredProducts === ""
+      return filteredProducts === ''
         ? true
         : product.name.toLowerCase().includes(filteredProducts.toLowerCase())
         ? true
@@ -25,7 +25,7 @@ function InputSearch({
 
     setNewFilterProducts(productsFiltered);
     if (filteredProducts.length == 0) {
-      toast.warning("Favor digite algum produto");
+      toast.warning('Favor digite algum produto');
     }
   }
 

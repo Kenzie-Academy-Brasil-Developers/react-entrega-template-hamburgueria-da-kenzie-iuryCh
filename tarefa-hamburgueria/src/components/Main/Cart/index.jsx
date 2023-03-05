@@ -37,8 +37,7 @@ function Cart({ currentSale, setCurrentSale, cartTotal, setCartTotal }) {
         <TotalCart
           currentSale={currentSale}
           setCurrentSale={setCurrentSale}
-          cartTotal={cartTotal}
-          setCartTotal={setCartTotal}
+         
         />
       </StyledCart>
     );
